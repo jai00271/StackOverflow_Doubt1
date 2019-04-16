@@ -6,7 +6,12 @@ namespace Basics.Main
 {
     public class BaseConsumer
     {
-        public IDataRepository DataRepository = new DataRepository();
+        public IDataRepository DataRepository;
+
+        public BaseConsumer(IDataRepository repo)
+        {
+            DataRepository = repo;
+        }
 
         public async Task<string> AppSetting()
         {
